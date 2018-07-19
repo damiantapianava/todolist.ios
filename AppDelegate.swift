@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         self.window = self.window ?? UIWindow()
-        self.window!.rootViewController = RootViewController()
+        self.window!.rootViewController = TableViewController()
         self.window!.backgroundColor = .white
         self.window!.makeKeyAndVisible()
         return true
