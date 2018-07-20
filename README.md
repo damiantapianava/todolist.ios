@@ -17,8 +17,11 @@ Xcode 9.4.1 (9F2000)
 ```
 Initial deploy on iPhone 5s iOS11.4.1
 ```
-![Initial setup for TableViewController](images/IMG_4631.jpg)
-![Initial setup for TableViewCell(images/IMG_4632.jpg)
+
+<p align="center">
+  <img src="images/IMG_4631.jpg">
+  <img src="images/IMG_4632.jpg">
+</p>
 
 ## Authors
 
