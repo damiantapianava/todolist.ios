@@ -15,9 +15,9 @@ Xcode 9.4.1 (9F2000)
 ### Installing
 
 ```
-Initial setup and deploy on iPhone 5s iOS11.4.1
+Initial deploy on iPhone 5s iOS11.4.1
 ```
-![alt text](https://photos.google.com/photo/AF1QipOlyV1HK4R9giEn5WH_tIJdF4L2OLSczAt-W7Rx)
+![Initial setup for TableViewController](images/IMG_4631.jpg)
 
 ## Authors
 
