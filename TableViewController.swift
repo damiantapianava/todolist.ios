@@ -8,51 +8,61 @@
 
 import UIKit
 
-class TableViewController: UITableViewController {
+class TableViewController: UITableViewController
+{
+    struct TodoItem
+    {
+        var taskName : String
+        var rowData: [String]
+    }
+    
+    var tasks : [TodoItem]!
     
     override func viewDidLoad()
     {
-      
-         super.viewDidLoad()
-           /*
-         let v = UIView(frame:CGRect(x: 100, y: 100, width: 50, height: 50))
-         v.backgroundColor = .red
-         self.view.addSubview(v)
-         */
-        // Do any additional setup after loading the view, typically from a nib.
+        super.viewDidLoad()
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: self.cellID)
+        self.tableView.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: 640, height: 50))
     }
     
     // MARK: - Table view data source
     
     let cellID = "Cell"
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
+    let todoList = ["todo1", "todo2", "todo3"]
+    
+    override func numberOfSections(in tableView: UITableView) -> Int
+    {
         return 1
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 20
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        return self.todoList.count
     }
     
+    var cells = 0
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        var cell : UITableViewCell! = tableView.dequeueReusableCell(withIdentifier: self.cellID)
+        var cell : UITableViewCell! = tableView.dequeueReusableCell(withIdentifier: self.cellID, for: indexPath)
         
         if cell == nil {
             cell = UITableViewCell(style:.default, reuseIdentifier: self.cellID)
             cell.textLabel!.textColor = .red
         }
         
-        cell.textLabel!.text = "Row no. \(indexPath.row)"
+        cell.textLabel!.text = todoList[indexPath.row]
         
         return cell
     }
+    /*
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        <#code#>
+    }
+    */
     
-     // Override to support conditional editing of the table view.
-     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the specified item to be editable.
-     return true
+     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool
+     {
+        return true
      }
     
      // Override to support editing the table view.
